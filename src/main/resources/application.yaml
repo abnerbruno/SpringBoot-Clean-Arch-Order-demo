@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: processOrder
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:db
+    username: sa
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+
+demo:
+  client:
+    url: http://gestao-estoque.demo.com.br/
+
+springdoc:
+  swagger-ui:
+    path: /v1/demo/index.html
+  api-docs:
+    path: /v1/demo/api-doc
+    enabled: true
