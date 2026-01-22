@@ -68,25 +68,30 @@ Console disponível em: `http://localhost:8080/h2-console`
 
 ```yaml
 spring:
+  application:
+    name: processOrder
+
   datasource:
-    url: jdbc:h2:mem:testdb
     driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:db
     username: sa
-    password:
-  h2:
-    console:
-      enabled: true
+    password: password
   jpa:
     hibernate:
-      ddl-auto: create-drop
-    show-sql: true
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+
+demo:
+  client:
+    url: http://gestao-estoque.demo.com.br/
 
 springdoc:
   swagger-ui:
-    path: /swagger-ui.html
-    enabled: true
+    path: /v1/demo/index.html
   api-docs:
-    path: /api-docs
+    path: /v1/demo/api-doc
     enabled: true
 ```
 
