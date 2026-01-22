@@ -57,7 +57,7 @@ Console disponível em: `http://localhost:8080/h2-console`
 
 | Configuração | Valor |
 |--------------|-------|
-| JDBC URL | `jdbc:h2:mem:testdb` |
+| JDBC URL | `jdbc:h2:mem:db` |
 | Username | `sa` |
 | Password | `password` |
 
